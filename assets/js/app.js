@@ -9,9 +9,9 @@ import "../css/app.css"
 //
 // Import deps with the dep name or local files with a relative path, for example:
 //
-//     import {Socket} from "phoenix"
+// import {Socket} from "phoenix"
 import socket from "./socket"
-//
+
 import "phoenix_html"
 
 
@@ -38,7 +38,7 @@ message.on("keypress", event => {
 //Listen for broadcast events(shout)
 channel.on("shout", payload =>{ 
 
-    list.append(`<b>${payload.name} || 'new_user':</b> ${payload.message}<br>`);
+    list.append(`<b>${payload.name || 'new_user'} :</b> ${payload.message}<br>`);
     list.prop({
         scrollTop: list.prop("scrollHeight")
 

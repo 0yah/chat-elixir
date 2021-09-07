@@ -1,5 +1,6 @@
 defmodule ChatWeb.ChatRoomChannel do
   use ChatWeb, :channel
+  import Logger
 
   @impl true
   def join("chat_room:lobby", payload, socket) do
@@ -21,6 +22,8 @@ defmodule ChatWeb.ChatRoomChannel do
   # broadcast to everyone in the current topic (chat_room:lobby).
   @impl true
   def handle_in("shout", payload, socket) do
+
+    Logger.info("Heoo")
     broadcast socket, "shout", payload
     {:noreply, socket}
   end

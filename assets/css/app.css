@@ -34,3 +34,14 @@
   display: block;
   margin: -1rem 0 2rem;
 }
+
+#message-list{
+  
+  border: 1px solid #000;
+  height: 600px;
+  padding: 5px;
+  overflow: scroll;
+  margin-bottom: 30px;
+
+}
+
