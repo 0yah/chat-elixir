@@ -1,6 +1,7 @@
 defmodule Chat.Message do
   use Ecto.Schema
   import Ecto.Changeset
+  alias Chat.Message
 
   schema "messages" do
     field :message, :string
@@ -15,4 +16,10 @@ defmodule Chat.Message do
     |> cast(attrs, [:name, :message])
     |> validate_required([:name, :message])
   end
+
+  def get_msgs(limit \\ 20) do
+    Chat.Repo.all(Message, limit: limit)
+  end
+
+
 end

@@ -36,7 +36,7 @@ message.on("keypress", event => {
 });
 
 //Listen for broadcast events(shout)
-channel.on("shout", payload =>{ 
+channel.on("shout", payload => {
 
     list.append(`<b>${payload.name || 'new_user'} :</b> ${payload.message}<br>`);
     list.prop({
@@ -45,10 +45,10 @@ channel.on("shout", payload =>{
     });
 });
 
-channel.join().receive("ok", resp =>{
+channel.join().receive("ok", resp => {
 
     console.log("Joined successfully", resp);
-    
+
 }).receive("error", resp => {
 
     console.log("Unable to join", resp);
